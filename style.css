@@ -1,0 +1,444 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  font-family: "Roboto", sans-serif !important;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #3498db;
+}
+
+/* Hero section */
+.hero {
+  padding: 8rem 5% 4rem;
+  text-align: center;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Featured articles */
+.featured-articles {
+  padding: 4rem 5%;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.article-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1.5rem;
+}
+
+.article-content h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Список тем */
+.forum-topics {
+  padding: 20px;
+}
+
+.topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topic-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+}
+
+.topic-card p {
+  margin: 0 0 10px 0;
+  font-size: 1em;
+  color: #666;
+}
+
+.topic-meta {
+  font-size: 0.9em;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Форма комментариев */
+.comments-section {
+  padding: 20px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif !important;
+  resize: none;
+}
+
+.comment-form textarea {
+  height: 100px;
+  font-size: 1em;
+}
+
+.comment-form button {
+  align-self: flex-start;
+  background-color: #0056b3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #003d80;
+}
+
+/* Список комментариев */
+.comments-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.comment .author {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment .content {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Сетка статей */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Карточка статьи */
+.article-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article-content {
+  padding: 15px;
+}
+
+.article-content h3 {
+  font-size: 1.4em;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.article-content p {
+  font-size: 1em;
+  color: #666;
+  margin: 0 0 15px;
+}
+
+.article-meta {
+  font-size: 0.9em;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.article-meta .date,
+.article-meta .category {
+  font-style: italic;
+}
+
+.read-more {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #0056b3;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #003d80;
+}
+
+.about-page .hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.about-page .hero p {
+  font-size: 1.2em;
+}
+
+/* Секция основного контента */
+.about-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-content .mission,
+.about-content .team,
+.about-content .contact {
+  margin-bottom: 30px;
+}
+
+.about-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.about-content p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Команда */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Контакты */
+.contact p {
+  font-size: 1em;
+  margin: 5px 0;
+  color: #333;
+}
+
+/* Основной контент */
+
+.article-wrapper {
+  padding: 8rem 5% 4rem;
+}
+
+.article-page {
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-page h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.article-page img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.article-page p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.article-page strong {
+  font-weight: bold;
+}
+
+.article-page ul {
+  margin: 15px 0 0 20px;
+  padding: 0;
+  font-size: 1em;
+  list-style-type: disc;
+}
+
+.article-page ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  line-height: 1.5;
+}

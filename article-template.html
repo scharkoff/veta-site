@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Статья - Журнал Футуролог</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">Футуролог</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="articles.html">Статьи</a></li>
+          <li><a href="forum.html">Форум</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="article-wrapper">
+      <div class="article-page">
+        <h1 id="article-title">Заголовок статьи</h1>
+        <img id="article-image" src="" alt="Изображение статьи" />
+        <p><strong>Дата публикации:</strong> <span id="article-date"></span></p>
+        <p><strong>Категория:</strong> <span id="article-category"></span></p>
+        <div id="article-body">
+          <p>Загрузка статьи...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>О журнале</h4>
+          <p>Журнал Футуролог - ведущее издание о технологиях будущего</p>
+        </div>
+        <div class="footer-section">
+          <h4>Контакты</h4>
+          <p>Email: info@futurolog.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Журнал Футуролог. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script>
+      const articles = {
+        "ai-2024": {
+          title: "Искусственный интеллект в 2024 году",
+          date: "15 марта 2024",
+          category: "Технологии",
+          image: "https://images.unsplash.com/photo-1581093458798-5c2c6f13be16",
+          content: `
+      <p>В 2024 году искусственный интеллект становится неотъемлемой частью нашей повседневной жизни. Компании активно используют модели глубокого обучения для оптимизации процессов, автоматизации и улучшения пользовательского опыта.</p>
+      <h2>Основные достижения:</h2>
+      <ul>
+        <li>Автономные системы в здравоохранении, такие как диагностические алгоритмы</li>
+        <li>Улучшение персонализированных рекомендаций в e-commerce</li>
+        <li>Этичное использование данных и развитие регуляций</li>
+      </ul>
+      <p>ИИ продолжает изменять все аспекты общества, от образования до производства.</p>
+    `,
+        },
+        "space-future": {
+          title: "Космические технологии будущего",
+          date: "10 марта 2024",
+          category: "Космос",
+          image: "https://images.unsplash.com/photo-1534430480872-49e078f9da23",
+          content: `
+      <p>2024 год ознаменован новыми достижениями в космосе. Космические агентства по всему миру продолжают исследовать Луну и Марс, а частные компании активно включаются в космическую гонку.</p>
+      <h2>Ключевые проекты:</h2>
+      <ul>
+        <li>Запуск лунной базы для исследования поверхности</li>
+        <li>Тестирование ядерных двигателей для межпланетных перелетов</li>
+        <li>Первая пилотируемая миссия на орбиту Марса</li>
+      </ul>
+      <p>Будущее космических технологий открывает новые горизонты для человечества.</p>
+    `,
+        },
+        "renewable-energy": {
+          title: "Возобновляемая энергия: тренды 2024",
+          date: "5 марта 2024",
+          category: "Экология",
+          image: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
+          content: `
+      <p>Вопросы экологии и устойчивого развития становятся главной темой 2024 года. Возобновляемая энергия занимает центральное место в энергетической политике многих стран.</p>
+      <h2>Ключевые тенденции:</h2>
+      <ul>
+        <li>Увеличение доли солнечной и ветровой энергии в общем энергопотреблении</li>
+        <li>Разработка более эффективных технологий хранения энергии</li>
+        <li>Активное развитие "зеленого" водорода</li>
+      </ul>
+      <p>Возобновляемая энергия помогает не только снизить выбросы CO₂, но и создать новые рабочие места.</p>
+    `,
+        },
+        "health-tech": {
+          title: "Будущее медицины",
+          date: "1 марта 2024",
+          category: "Медицина",
+          image: "https://images.unsplash.com/photo-1550831107-1553da8c8464",
+          content: `
+      <p>Медицина 2024 года находится на пороге революции благодаря достижениям в области технологий. Новые разработки значительно ускоряют диагностику и лечение заболеваний.</p>
+      <h2>Основные инновации:</h2>
+      <ul>
+        <li>Нанороботы для доставки лекарств в организм</li>
+        <li>Генетическая терапия для лечения наследственных болезней</li>
+        <li>ИИ для предсказания эпидемий</li>
+      </ul>
+      <p>Сочетание технологий и медицины делает лечение более доступным и эффективным.</p>
+    `,
+        },
+      };
+
+      function loadArticle(articleId) {
+        const article = articles[articleId];
+
+        if (!article) {
+          document.getElementById("article-body").innerHTML =
+            "<p>Статья не найдена.</p>";
+          return;
+        }
+
+        document.getElementById("article-title").textContent = article.title;
+        document.getElementById("article-image").src = article.image;
+        document.getElementById("article-image").alt = article.title;
+        document.getElementById("article-date").textContent = article.date;
+        document.getElementById("article-category").textContent =
+          article.category;
+        document.getElementById("article-body").innerHTML = article.content;
+      }
+
+      const articleId = new URLSearchParams(window.location.search).get("id");
+      if (articleId) {
+        loadArticle(articleId);
+      }
+    </script>
+  </body>
+</html>

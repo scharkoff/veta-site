@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Журнал Футуролог - Новости будущего</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">Футуролог</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="articles.html">Статьи</a></li>
+          <li><a href="forum.html">Форум</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Журнал Футуролог</h1>
+        <p>Ваш путеводитель в мир технологий будущего</p>
+      </section>
+
+      <section class="featured-articles">
+        <h2>Главные материалы</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <img src="https://placehold.co/400x300" alt="AI Technology" />
+            <div class="article-content">
+              <h3>Искусственный интеллект в 2024 году</h3>
+              <p>Как ИИ меняет нашу повседневную жизнь...</p>
+              <a href="/articles/ai-2024.html" class="read-more"
+                >Читать далее</a
+              >
+            </div>
+          </article>
+          <article class="article-card">
+            <img src="https://placehold.co/400x300" alt="Space Exploration" />
+            <div class="article-content">
+              <h3>Колонизация Марса</h3>
+              <p>Последние достижения в освоении красной планеты...</p>
+              <a href="/articles/mars-colonization.html" class="read-more"
+                >Читать далее</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>О журнале</h4>
+          <p>Журнал Футуролог - ведущее издание о технологиях будущего</p>
+        </div>
+        <div class="footer-section">
+          <h4>Контакты</h4>
+          <p>Email: info@futurolog.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Журнал Футуролог. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initSmoothScroll();
+        initNavbarScroll();
+        initArticleAnimations();
+      });
+
+      // Handle article card animations
+      function initArticleAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".article-card").forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(card);
+        });
+      }
+    </script>
+  </body>
+</html>

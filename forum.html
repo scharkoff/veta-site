@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форум - Журнал Футуролог</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">Футуролог</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="articles.html">Статьи</a></li>
+          <li><a href="forum.html">Форум</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="forum-page">
+      <section class="hero">
+        <h1>Форум</h1>
+        <p>Обсуждайте технологии будущего с единомышленниками</p>
+      </section>
+
+      <section class="forum-topics">
+        <h2>Популярные темы</h2>
+        <div class="topics-list">
+          <div class="topic-card">
+            <h3>
+              <a href="/topics/ai-future.html"
+                >Будущее искусственного интеллекта</a
+              >
+            </h3>
+            <p>Обсуждение перспектив развития ИИ...</p>
+            <div class="topic-meta">
+              <span>42 сообщения</span>
+              <span>Последнее: 2 часа назад</span>
+            </div>
+          </div>
+          <div class="topic-card">
+            <h3>
+              <a href="/topics/space-exploration.html"
+                >Космические исследования</a
+              >
+            </h3>
+            <p>Перспективы освоения Луны и Марса...</p>
+            <div class="topic-meta">
+              <span>35 сообщений</span>
+              <span>Последнее: 5 часов назад</span>
+            </div>
+          </div>
+          <div class="topic-card">
+            <h3>
+              <a href="/topics/renewable-energy.html">Возобновляемая энергия</a>
+            </h3>
+            <p>Как технологии изменяют энергетику...</p>
+            <div class="topic-meta">
+              <span>28 сообщений</span>
+              <span>Последнее: 1 день назад</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="comments-section">
+        <h2>Добавить комментарий</h2>
+        <form id="comment-form" class="comment-form">
+          <input type="text" name="author" placeholder="Ваше имя" required />
+          <textarea
+            name="content"
+            placeholder="Ваш комментарий"
+            required
+          ></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+        <div class="comments-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>О журнале</h4>
+          <p>Журнал Футуролог - ведущее издание о технологиях будущего</p>
+        </div>
+        <div class="footer-section">
+          <h4>Контакты</h4>
+          <p>Email: info@futurolog.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Журнал Футуролог. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
