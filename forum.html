@@ -31,7 +31,7 @@
         <div class="topics-list">
           <div class="topic-card">
             <h3>
-              <a href="/topics/ai-future.html"
+              <a href="article-template.html?id=ai-2024"
                 >Будущее искусственного интеллекта</a
               >
             </h3>
@@ -43,7 +43,7 @@
           </div>
           <div class="topic-card">
             <h3>
-              <a href="/topics/space-exploration.html"
+              <a href="article-template.html?id=space-future"
                 >Космические исследования</a
               >
             </h3>
@@ -55,7 +55,9 @@
           </div>
           <div class="topic-card">
             <h3>
-              <a href="/topics/renewable-energy.html">Возобновляемая энергия</a>
+              <a href="article-template.html?id=renewable-energy"
+                >Возобновляемая энергия</a
+              >
             </h3>
             <p>Как технологии изменяют энергетику...</p>
             <div class="topic-meta">
@@ -97,6 +99,40 @@
       </div>
     </footer>
 
-    <script type="module" src="main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("comment-form");
+        const commentsList = document.querySelector(".comments-list");
+
+        // Добавление комментария
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          // Получаем данные из формы
+          const author = form.elements["author"].value.trim();
+          const content = form.elements["content"].value.trim();
+
+          if (!author || !content) {
+            alert("Пожалуйста, заполните все поля!");
+            return;
+          }
+
+          // Создаем HTML для нового комментария
+          const commentHTML = `
+          <div class="comment">
+            <h4 class="comment-author">${author}</h4>
+            <p class="comment-content">${content}</p>
+            <span class="comment-time">${new Date().toLocaleString()}</span>
+          </div>
+        `;
+
+          // Добавляем новый комментарий в список
+          commentsList.insertAdjacentHTML("beforeend", commentHTML);
+
+          // Очищаем форму
+          form.reset();
+        });
+      });
+    </script>
   </body>
 </html>
