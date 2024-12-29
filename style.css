@@ -46,6 +46,20 @@ body {
   transition: color 0.3s ease;
 }
 
+@media screen and (max-width: 480px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
+
 .nav-links a:hover {
   color: #3498db;
 }
@@ -66,40 +80,6 @@ body {
 /* Featured articles */
 .featured-articles {
   padding: 4rem 5%;
-}
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.article-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.article-card:hover {
-  transform: translateY(-5px);
-}
-
-.article-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.article-content {
-  padding: 1.5rem;
-}
-
-.article-content h3 {
-  margin-bottom: 1rem;
-  color: #333;
 }
 
 .read-more {
@@ -243,7 +223,6 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px;
   background-color: #f9f9f9;
 }
 
@@ -251,9 +230,8 @@ footer {
 .article-card {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -264,7 +242,8 @@ footer {
 
 .article-card img {
   width: 100%;
-  height: auto;
+  height: 400px;
+  object-fit: cover;
   display: block;
 }
 
@@ -317,10 +296,6 @@ footer {
   margin-bottom: 10px;
 }
 
-.about-page .hero p {
-  font-size: 1.2em;
-}
-
 /* Секция основного контента */
 .about-content {
   padding: 20px;
@@ -362,7 +337,6 @@ footer {
   padding: 15px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
